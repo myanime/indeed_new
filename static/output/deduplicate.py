@@ -16,4 +16,4 @@ df_post_codes = pd.read_csv(post_codes_csv)
 df_month_output_deduped = df_month_output_deduped.merge(df_post_codes, on='job_location', how='left')
 
 today_deduped = df_month_output_deduped[df_month_output_deduped['job_date'] == todays_date]
-today_deduped.to_csv('./transfer/V1au_' + todays_date + ".csv", float_format='%.0f')
+today_deduped.to_csv('./transfer/V1au_' + todays_date + ".csv", float_format='%.0f', index=False)
