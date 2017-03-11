@@ -14,6 +14,6 @@ sleep 10
 cd $MYPATH/$COUNTRY/static/output
 sudo python deduplicate.py
 cd $MYPATH/$COUNTRY/static/output/transfer
-sudo gzip *.*
-sudo mv *.* /$MYPATH/transfer/$COUNTRY
-scp -i $MYPATH/.ssh/aws_schlupfi.pem -r $MYPATH/transfer/$COUNTRY/* ubuntu@54.93.163.4:./countries/$COUNTRY
+gzip *.*
+mv *.* /$MYPATH/countries/$COUNTRY
+#scp -i $MYPATH/.ssh/aws_schlupfi.pem -r $MYPATH/transfer/$COUNTRY/* ubuntu@54.93.163.4:./countries/$COUNTRY
