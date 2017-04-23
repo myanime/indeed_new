@@ -131,12 +131,15 @@ class MainScraper(scrapy.Spider):
                 new_test = re.findall(newregex, new_email)
 
                 if new_test:
-                    for i in new_test[0]:
-                        if i:
-                            result = i
-                            break
-                    if new_email.startswith(result):
-                        return_email = new_email[len(result):]
+                    try:
+                        for i in new_test[0]:
+                            if i:
+                                result = i
+                                break
+                        if new_email.startswith(result):
+                            return_email = new_email[len(result):]
+                    except:
+                        return_email = new_email
                 else:
                     return_email = new_email
                 item['original_link_emails'] = return_email
